@@ -1,0 +1,75 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/logScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/progress"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/logView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtLog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                tools:text="djwodijo">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <net.gotev.speech.ui.SpeechProgressView
+        android:id="@+id/progress"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/testButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logScrollView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/testButton"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:text="START"
+        app:layout_constraintBottom_toTopOf="@+id/settings"
+        app:layout_constraintDimensionRatio="192:50"
+        app:layout_constraintEnd_toStartOf="@+id/testButton2"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/testButton2"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:text="STOP"
+        app:layout_constraintBottom_toTopOf="@+id/settings"
+        app:layout_constraintDimensionRatio="192:50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/testButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <FrameLayout
+        android:id="@+id/settings"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.4" />
+</androidx.constraintlayout.widget.ConstraintLayout>
